@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        form {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Placement Prediction</h1>
+    <form method="post" action="/predict">
+        <label for="iq">IQ:</label><br>
+        <input type="text" id="iq" name="iq"><br><br>
+        <label for="cgpa">CGPA:</label><br>
+        <input type="text" id="cgpa" name="cgpa"><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
